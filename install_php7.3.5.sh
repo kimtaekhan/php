@@ -2,6 +2,27 @@
 
 . /usr/local/src/apm/config/apm_config
 
+# Php 7.3.5 Install Start !
+echo -en "
+\033[3;36m
+                            ._________     _  ___________  __________  ____           
+                            |   |/  /     |__   __|       |   |__|  |                  
+                            |   /  /        |\ /|         |   /__\  |                   
+                            |   \  \        |/ \|         |   /__ \ |                   
+                            | __|\__\       |\_/|         /__/|  |_\|                  
+                            /\      \\/      //    \/        //      /\  \\/          
+\033[1;0m\033[2;31m
+                                        MAKE BY KIMTAEKHAN
+\033[1;0m\033[1;33m\e[5m
+                                     start apache installtion !
+\033[1;0m
+"
+for i in `seq 5 -1 0`;
+do
+	echo -en "\r\t\t\t\t\t\t${i}"
+	sleep 1
+done
+
 # yum install
 yum -y install ncurses-devel # ncurses 라이브러리가 없어서 발생할수 있는 에러를 예방하기 위해 설치합니다.
 yum -y install compat-* # gcc 호환성 패키지들  compat-* 을 시스템에 설치한다.
