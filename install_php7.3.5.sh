@@ -98,6 +98,18 @@ make & make install
 make install check
 
 # install php-7.3.5 now
+check_lib_conf=`grep "/usr/local/lib" /etc/ld.so.conf | wc -l`
+if [ ${check_lib_conf} -eq 0 ]
+then
+    echo "/usr/local/lib" >> /etc/ld.so.conf
+    ldconfig
+fi
+check_lib64_conf=`grep "/usr/local/lib64" /etc/ld.so.conf | wc -l`
+if [ ${check_lib64_conf} -eq 0 ]
+then
+    echo "/usr/local/lib64" >> /etc/ld.so.conf
+    ldconfig
+fi
 cd ${php_path}/php-7.3.5
 ./configure --prefix=/usr/local/php --with-mysql=/usr/local/mysql --with-apxs2=/usr/local/apache/bin/apxs --with-jpeg-dir --with-png-dir --with-curl --with-zlib-dir --with-gd --with-freetype-dir --with-iconv --with-zlib --with-openssl --with-pcre-regex --with-pear --enable-sockets --disable-debug --enable-ftp --enable-sysvsem=yes --enable-sysvshm=yes --enable-bcmath --enable-exif --enable-zip --enable-gd-native-ttf --enable-mbstring
 make && make install
