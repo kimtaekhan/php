@@ -74,17 +74,17 @@ mkdir build && cd build && cmake .. && make && make install
 
 # php-7.3.5.tar.gz
 cd ${php_path}
-https://github.com/kimtaekhan/apm/raw/master/php-7.3.5.tar.gz
+wget https://github.com/kimtaekhan/apm/raw/master/php-7.3.5.tar.gz
 tar xzvf php-7.3.5.tar.gz
 
 # bison-2.7.91.tar.gz
 cd ${php_path}
-https://github.com/kimtaekhan/apm/raw/master/bison-2.7.91.tar.gz
+wget https://github.com/kimtaekhan/apm/raw/master/bison-2.7.91.tar.gz
 tar xzvf bison-2.7.91.tar.gz
 
 # re2c-0.13.7.5.tar.gz
 cd ${php_path}
-https://github.com/kimtaekhan/apm/raw/master/re2c-0.13.7.5.tar.gz
+wget https://github.com/kimtaekhan/apm/raw/master/re2c-0.13.7.5.tar.gz
 tar xzvf rc2c-0.13.7.5.tar.gz
 
 # install bison-2.7.91
