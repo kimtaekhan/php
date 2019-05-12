@@ -14,7 +14,7 @@ echo -en "
 \033[1;0m\033[2;31m
                                         MAKE BY KIMTAEKHAN
 \033[1;0m\033[1;33m\e[5m
-                                     start apache installtion !
+                                     start php installtion !
 \033[1;0m
 "
 for i in `seq 5 -1 0`;
