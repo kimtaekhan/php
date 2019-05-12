@@ -52,18 +52,22 @@ yum -y install wget
 system_core_count=`grep -c processor /proc/cpuinfo`
 
 # cmake-3.0.2
-cd ${php_path}
-wget https://github.com/kimtaekhan/apm/raw/master/cmake-3.0.2.tar.gz
-tar xf cmake-3.0.2.tar.gz
-# Installing package for compilation installation
-yum -y groupinstall "Development tools"
-yum -y install ncurses ncurses-devel
-cd ${php_path}/cmake-3.0.2
-./bootstrap
-# make (cmake)
-make -j $system_core_count
-# make install (cmake)
-make install
+cmake_check=`cmake -version | head -1 | grep "3.0.2" | wc -l`
+if [ ${cmake_check} -eq 0 ]
+then
+    cd ${php_path}
+    wget https://github.com/kimtaekhan/apm/raw/master/cmake-3.0.2.tar.gz
+    tar xf cmake-3.0.2.tar.gz
+    # Installing package for compilation installation
+    yum -y groupinstall "Development tools"
+    yum -y install ncurses ncurses-devel
+    cd ${php_path}/cmake-3.0.2
+    ./bootstrap
+    # make (cmake)
+    make -j $system_core_count
+    # make install (cmake)
+    make install
+fi
 
 # libzip-1.2.0.tar.gz
 cd ${php_path}
