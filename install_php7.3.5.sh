@@ -130,4 +130,4 @@ sed -i '/AddType application\/x-gzip .gz .tgz/a AddType application\/x-httpd-php
 /etc/init.d/httpd start
 
 # check php page
-echo "<?php phpinfo(); >?" >> /usr/local/apache/htdocs/phpinfo.php
+echo "<?php phpinfo(); ?>" >> /usr/local/apache/htdocs/phpinfo.php
